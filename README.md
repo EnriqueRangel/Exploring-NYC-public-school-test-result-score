@@ -1,25 +1,61 @@
-# Exploring-NYC-public-school-test-result-score
+# 🏙️ Exploring NYC Public School SAT Results  
+**Análisis de Resultados de SAT en Escuelas Públicas de Nueva York**
 
-Every year, American high school students take SATs, which are standardized tests intended to measure literacy, numeracy, and writing skills. There are three sections - reading, math, and writing, each with a maximum score of 800 points. These tests are extremely important for students and colleges, as they play a pivotal role in the admissions process.
+---
 
-Analyzing the performance of schools is important for a variety of stakeholders, including policy and education professionals, researchers, government, and even parents considering which school their children should attend.
+Cada año, los estudiantes de preparatoria en EE.UU. presentan el **SAT**, un examen estandarizado que evalúa habilidades en **lectura, matemáticas y escritura**, con un puntaje máximo de **800 por sección**.  
+Este examen es clave para el proceso de admisión universitaria y sirve como métrica para evaluar el desempeño académico de las escuelas.
+
+Este proyecto busca **explorar el rendimiento de las escuelas públicas de Nueva York** a través del análisis de datos del SAT, con el objetivo de identificar tendencias, destacar escuelas con alto rendimiento y proveer información útil para investigadores, autoridades educativas y padres de familia.
+
+---
+
+## 🔍 Objetivos del Análisis
+
+### 1. 🧠 Escuelas con mejor desempeño en matemáticas  
+**Pregunta:** ¿Qué escuelas de NYC tienen los mejores resultados en matemáticas?  
+- Se considera un buen resultado si el promedio de matemáticas es al menos **80% de 800 puntos** (≥ 640).  
+- Se guarda en un DataFrame llamado `best_math_schools`  
+- Columnas: `school_name`, `average_math`  
+- Ordenado de mayor a menor por `average_math`
+
+---
+
+### 2. 🏆 Top 10 escuelas con mejor rendimiento total en el SAT  
+**Pregunta:** ¿Cuáles son las 10 escuelas con mejor rendimiento total combinando todas las secciones del SAT?  
+- Se crea una columna nueva `total_SAT` que es la suma de `math`, `reading` y `writing`  
+- Se guarda en un DataFrame llamado `top_10_schools`  
+- Columnas: `school_name`, `total_SAT`  
+- Ordenado de mayor a menor por `total_SAT`
+
+---
+
+### 3. 🌍 Borough con mayor desviación estándar en el puntaje SAT total  
+**Pregunta:** ¿Qué borough de NYC tiene la mayor variabilidad en los resultados combinados del SAT?  
+- Se analiza el `total_SAT` por borough  
+- Se guarda en un DataFrame llamado `largest_std_dev`  
+- Columnas:  
+  - `borough`  
+  - `num_schools` (número de escuelas en el borough)  
+  - `average_SAT` (promedio de `total_SAT`)  
+  - `std_SAT` (desviación estándar de `total_SAT`)  
+- Todos los valores numéricos se redondean a **dos decimales**
+
+---
+
+## 📦 Herramientas Utilizadas
+
+- **Python**  
+- **Pandas**  
+- **Google Colab**
 
 
-## Instructions 
+---
 
-Which NYC schools have the best math results?
+## 📁 Resultados
 
-The best math results are at least 80% of the *maximum possible score of 800* for math.
-Save your results in a pandas DataFrame called best_math_schools, including "school_name" and "average_math" columns, sorted by "average_math" in descending order.
-What are the top 10 performing schools based on the combined SAT scores?
+Este análisis ofrece insights clave para entender la calidad académica de las escuelas públicas de NYC y puede ayudar en la toma de decisiones educativas tanto a nivel individual como institucional.
 
-Save your results as a pandas DataFrame called top_10_schools containing the "school_name" and a new column named "total_SAT", with results ordered by "total_SAT" in descending order ("total_SAT" being the sum of math, reading, and writing scores).
-Which single borough has the largest standard deviation in the combined SAT score?
+---
 
-Save your results as a pandas DataFrame called largest_std_dev.
-The DataFrame should contain one row, with:
-"borough" - the name of the NYC borough with the largest standard deviation of "total_SAT".
-"num_schools" - the number of schools in the borough.
-"average_SAT" - the mean of "total_SAT".
-"std_SAT" - the standard deviation of "total_SAT".
-Round all numeric values to two decimal places.
+> ✨ *Proyecto realizado como práctica de análisis de datos con enfoque en educación. Si te interesa colaborar o dar feedback, ¡estás más que bienvenido!*
